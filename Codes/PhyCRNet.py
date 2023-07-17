@@ -1,8 +1,6 @@
 import torch
 import torch.nn as nn
-import torch.optim as optim
-from torch.autograd import Variable
-from torch.optim.lr_scheduler import StepLR
+# from torch.autograd import Variable
 import numpy as np
 
 from network import ConvLSTMCell, encoder_block, decoder_block, source_encoder_block
