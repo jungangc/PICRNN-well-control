@@ -94,25 +94,6 @@ class loss_generator(nn.Module):
        
         super(loss_generator, self).__init__()
 
-#         # spatial derivative operator
-#         self.laplace = Conv2dDerivative(
-#             DerFilter = lapl_op,
-#             resol = (dx**2),
-#             kernel_size = 5,
-#             name = 'laplace_operator').cuda()
-
-#         self.dx = Conv2dDerivative(
-#             DerFilter = partial_x,
-#             resol = (dx*1),
-#             kernel_size = 5,
-#             name = 'dx_operator').cuda()
-
-#         self.dy = Conv2dDerivative(
-#             DerFilter = partial_y,
-#             resol = (dx*1),
-#             kernel_size = 5,
-#             name = 'dy_operator').cuda()
-
         # temporal derivative operator
         self.dt = Conv1dDerivative(
             DerFilter = [[[-1, 0, 1]]],
