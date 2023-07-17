@@ -1,5 +1,3 @@
-'''PhyCRNet for solving spatiotemporal PDEs'''
-
 import torch
 import torch.nn as nn
 import torch.optim as optim
