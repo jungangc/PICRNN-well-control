@@ -9,25 +9,11 @@ from network import ConvLSTMCell, encoder_block, decoder_block, source_encoder_b
 
 # generalized version
 def initialize_weights(module):
-    ''' starting from small initialized parameters '''
     if isinstance(module, nn.Conv2d):
-        # c = 0.1
-        # module.weight.data.uniform_(-c*np.sqrt(1 / np.prod(module.weight.shape[:-1])),
-        #                              c*np.sqrt(1 / np.prod(module.weight.shape[:-1])))
         nn.init.kaiming_uniform_(module.weight.data)
 
     elif isinstance(module, nn.Linear):
         module.bias.data.zero_()
-
-# # generalized version
-# def initialize_weights(module):
-#     ''' starting from small initialized parameters '''
-#     if isinstance(module, nn.Conv2d):
-#         c = 0.1
-#         module.weight.data.xavier_normal_(module.weight)
-     
-#     elif isinstance(module, nn.Linear):
-#         module.bias.data.zero_()
 
 
 class PhyCRNet(nn.Module):
